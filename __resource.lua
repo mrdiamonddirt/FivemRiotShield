@@ -1,7 +1,10 @@
---[[
-    Scripted by: Xander Harrison [X. Cross]
---]]
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+x_version 'cerulean'
+games { 'rdr3', 'gta5' }
 
-server_script "server.lua"
-client_script "client.lua"
+author 'RowDog <mrdiamonddirt@gamil.com>'
+description 'Riot Shield Resources'
+version '1.0.0'
+
+-- What to run
+client_script 'client.lua'
+server_script 'server.lua'
