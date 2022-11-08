@@ -1,4 +1,4 @@
-x_version 'cerulean'
+fx_version 'cerulean'
 games { 'rdr3', 'gta5' }
 
 author 'RowDog <mrdiamonddirt@gamil.com>'
