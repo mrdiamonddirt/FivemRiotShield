@@ -12,31 +12,6 @@ local actionTime = 10
 local riot_net = nil
 local soundDistance = 15
 
-ESX					= nil
-local PlayerData	= {}
-local IsCop			= false
-
--- Citizen.CreateThread(function()
-	-- while ESX == nil do
-		-- TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		-- Citizen.Wait(0)
-	-- end
-
-	-- Citizen.Wait(5000)
-	-- PlayerData = ESX.GetPlayerData()
-	-- if PlayerData.job.name == 'police' then
-		-- IsCop = true
-	-- end
--- end)
-
--- RegisterNetEvent('esx:setJob')
--- AddEventHandler('esx:setJob', function(job)
-	-- PlayerData.job = job
-
-	-- IsCop = (job.name == 'police') or false
--- end)
-
-
 ---------------------------------------------------------------------------
 -- Toggling Riot2 --
 ---------------------------------------------------------------------------
@@ -66,11 +41,8 @@ AddEventHandler("Riot:ToggleBalRiot", function()
         NetworkSetNetworkIdDynamic(netid, true)
         SetNetworkIdCanMigrate(netid, false)
         AttachEntityToEntity(riotspawned2, GetPlayerPed(PlayerId()), GetPedBoneIndex(GetPlayerPed(PlayerId()), 45509), 0.35, 0.05, -0.1, 300.0, 180.0, 60.0, 1, 1, 1, 1, 0, 1)
-        --TaskPlayAnim(GetPlayerPed(PlayerId()), 1.0, -1, -1, 50, 0, 0, 0, 0) -- 50 = 32 + 16 + 2
-        --TaskPlayAnim(GetPlayerPed(PlayerId()), riotanimDict2, riotanimName2, 1.0, -1, -1, 50, 0, 0, 0, 0)
         riot_net = netid
         holdingRiot2 = true
-        -- SetPedPropIndex(GetPlayerPed(PlayerId()),0,125,0, true)
     else
         ClearPedSecondaryTask(GetPlayerPed(PlayerId()))
         DetachEntity(NetToObj(riot_net), 1, 1)
@@ -78,7 +50,6 @@ AddEventHandler("Riot:ToggleBalRiot", function()
         riot_net = nil
         holdingRiot2 = false
         usingRiot2 = false
-        -- ClearPedProp(GetPlayerPed(PlayerId()), 0)
 	end
 end)
 
@@ -121,11 +92,8 @@ AddEventHandler("Riot:ToggleRiot", function()
         NetworkSetNetworkIdDynamic(netid, true)
         SetNetworkIdCanMigrate(netid, false)
         AttachEntityToEntity(riotspawned, GetPlayerPed(PlayerId()), GetPedBoneIndex(GetPlayerPed(PlayerId()), 45509), 0.35, 0.05, -0.1, 300.0, 180.0, 60.0, 1, 1, 1, 1, 0, 1)
-        --TaskPlayAnim(GetPlayerPed(PlayerId()), 1.0, -1, -1, 50, 0, 0, 0, 0) -- 50 = 32 + 16 + 2
-        --TaskPlayAnim(GetPlayerPed(PlayerId()), riotanimDict, riotanimName, 1.0, -1, -1, 50, 0, 0, 0, 0)
         riot_net = netid
         holdingRiot = true
-        -- SetPedPropIndex(GetPlayerPed(PlayerId()),0,80,1, true)
     else
         ClearPedSecondaryTask(GetPlayerPed(PlayerId()))
         DetachEntity(NetToObj(riot_net), 1, 1)
@@ -133,7 +101,6 @@ AddEventHandler("Riot:ToggleRiot", function()
         riot_net = nil
         holdingRiot = false
         usingRiot = false
-        -- ClearPedProp(GetPlayerPed(PlayerId()), 0)
 	end
 end)
 
