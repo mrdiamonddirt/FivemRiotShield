@@ -11,7 +11,7 @@ if QBCore == nil then
     else
         local QBCore = exports['qb-core']:GetCoreObject()
     
-        QBCore.Commands.Add("riotshield", "Gives Riot Shield (Police Only)", {}, false, function(source)
+        QBCore.Commands.Add("riot", "Gives Riot Shield (Police Only)", {}, false, function(source)
             local Player = QBCore.Functions.GetPlayer(source)
             if Player.PlayerData.job.name == "police" then
                 TriggerClientEvent("Riot:ToggleRiot", source)
