@@ -70,8 +70,7 @@ AddEventHandler("Riot:ToggleBalRiot", function()
         --TaskPlayAnim(GetPlayerPed(PlayerId()), riotanimDict2, riotanimName2, 1.0, -1, -1, 50, 0, 0, 0, 0)
         riot_net = netid
         holdingRiot2 = true
-        SetPedPropIndex(GetPlayerPed(PlayerId()),0,125,0, true)
-        print('Hey')
+        -- SetPedPropIndex(GetPlayerPed(PlayerId()),0,125,0, true)
     else
         ClearPedSecondaryTask(GetPlayerPed(PlayerId()))
         DetachEntity(NetToObj(riot_net), 1, 1)
@@ -79,7 +78,7 @@ AddEventHandler("Riot:ToggleBalRiot", function()
         riot_net = nil
         holdingRiot2 = false
         usingRiot2 = false
-        ClearPedProp(GetPlayerPed(PlayerId()), 0)
+        -- ClearPedProp(GetPlayerPed(PlayerId()), 0)
 	end
 end)
 
@@ -126,7 +125,7 @@ AddEventHandler("Riot:ToggleRiot", function()
         --TaskPlayAnim(GetPlayerPed(PlayerId()), riotanimDict, riotanimName, 1.0, -1, -1, 50, 0, 0, 0, 0)
         riot_net = netid
         holdingRiot = true
-        SetPedPropIndex(GetPlayerPed(PlayerId()),0,80,1, true)
+        -- SetPedPropIndex(GetPlayerPed(PlayerId()),0,80,1, true)
     else
         ClearPedSecondaryTask(GetPlayerPed(PlayerId()))
         DetachEntity(NetToObj(riot_net), 1, 1)
@@ -134,7 +133,7 @@ AddEventHandler("Riot:ToggleRiot", function()
         riot_net = nil
         holdingRiot = false
         usingRiot = false
-        ClearPedProp(GetPlayerPed(PlayerId()), 0)
+        -- ClearPedProp(GetPlayerPed(PlayerId()), 0)
 	end
 end)
 
